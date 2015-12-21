@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="progcell" id="gTV-IL-0wX" customClass="ProgramaCell" customModule="DouYuSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQJ-Ef-bmy">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="02l-EW-Uxj"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_normal" translatesAutoresizingMaskIntoConstraints="NO" id="oMN-3D-Zpv">
+                        <rect key="frame" x="0.0" y="149" width="305" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="wky-7O-3Lp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuK-6c-iFP">
+                        <rect key="frame" x="0.0" y="121" width="100" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cQJ-Ef-bmy" secondAttribute="trailing" id="FWg-II-B9E"/>
+                <constraint firstAttribute="bottom" secondItem="CuK-6c-iFP" secondAttribute="bottom" constant="1" id="LN4-em-c1Z"/>
+                <constraint firstItem="CuK-6c-iFP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UCi-5W-KVh"/>
+                <constraint firstItem="oMN-3D-Zpv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wme-xd-Ba8"/>
+                <constraint firstAttribute="trailing" secondItem="CuK-6c-iFP" secondAttribute="trailing" id="XUj-Mn-VMO"/>
+                <constraint firstItem="cQJ-Ef-bmy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aY8-jw-dAn"/>
+                <constraint firstAttribute="trailing" secondItem="oMN-3D-Zpv" secondAttribute="trailing" constant="-205" id="kgd-kV-sfo"/>
+                <constraint firstItem="cQJ-Ef-bmy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lqV-C5-7Qu"/>
+                <constraint firstAttribute="bottom" secondItem="oMN-3D-Zpv" secondAttribute="bottom" id="mDQ-a8-tou"/>
+                <constraint firstItem="CuK-6c-iFP" firstAttribute="top" secondItem="cQJ-Ef-bmy" secondAttribute="bottom" constant="1" id="urg-sr-4q4"/>
+            </constraints>
+            <size key="customSize" width="120" height="146"/>
+            <connections>
+                <outlet property="gameName" destination="CuK-6c-iFP" id="GNx-u3-QaC"/>
+                <outlet property="programaimg" destination="cQJ-Ef-bmy" id="uYd-28-4Iy"/>
+            </connections>
+            <point key="canvasLocation" x="283" y="294"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="btn_normal" width="305" height="44"/>
+    </resources>
+</document>

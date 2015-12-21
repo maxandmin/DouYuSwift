@@ -1,0 +1,5 @@
+platform :ios, '7.0'                    #基于IOS7.0
+pod 'AFNetworking', '~> 2.6.1'          #网络请求
+pod ‘SDWebImage’,’~>3.6’                #图片缓存
+pod 'SVProgressHUD', '~> 1.1.3'         #HUD指示器
+ pod 'MJRefresh', '~> 3.0.7'            #刷新
