@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "207EBFE645480CB72C6932F216F0F7D6DC9DA24D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "207EBFE645480CB72C6932F216F0F7D6DC9DA24D" : 0,
+    "2179F228C590F447347A8715C5F9ADFF4C17DC35" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7C62086E-9F81-407D-B346-F6114BAD52D2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "207EBFE645480CB72C6932F216F0F7D6DC9DA24D" : "DouYu\/",
+    "2179F228C590F447347A8715C5F9ADFF4C17DC35" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DouYuSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DouYuSwift.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/maxandmin\/DouYuSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "207EBFE645480CB72C6932F216F0F7D6DC9DA24D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/maxandmin\/DouYuSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2179F228C590F447347A8715C5F9ADFF4C17DC35"
+    }
+  ]
+}

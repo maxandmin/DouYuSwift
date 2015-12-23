@@ -51,6 +51,7 @@
 		8481B09B1C2706AC00FE6B8E /* mySceionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481B09A1C2706AC00FE6B8E /* mySceionview.swift */; };
 		8481B09D1C2706C100FE6B8E /* mySceionview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8481B09C1C2706C100FE6B8E /* mySceionview.xib */; };
 		8481B0A01C27163C00FE6B8E /* PayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481B09F1C27163C00FE6B8E /* PayDetailsViewController.swift */; };
+		848BBEA71C297D12004B0FCF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BBEA61C297D12004B0FCF /* Player.swift */; };
 		84BF5A991C26B2AD006845D0 /* ProgramaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF5A971C26B2AD006845D0 /* ProgramaCell.swift */; };
 		84BF5A9A1C26B2AD006845D0 /* ProgramaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A981C26B2AD006845D0 /* ProgramaCell.xib */; };
 		84BF5A9F1C26BA9C006845D0 /* ProgramaBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF5A9C1C26BA9C006845D0 /* ProgramaBaseClass.m */; };
@@ -68,7 +69,7 @@
 		840356C91C19BED70068C6D9 /* channelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = channelView.swift; path = View/channelView.swift; sourceTree = "<group>"; };
 		840356CB1C19BEF30068C6D9 /* channelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = channelView.xib; path = View/channelView.xib; sourceTree = "<group>"; };
 		840356CD1C19DDB50068C6D9 /* channelScrollview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = channelScrollview.swift; path = View/channelScrollview.swift; sourceTree = "<group>"; };
-		841664C11C15DC0200AFB093 /* DouYuSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		841664C11C15DC0200AFB093 /* 斗鱼TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "斗鱼TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		841664C41C15DC0200AFB093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841664C61C15DC0200AFB093 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		841664C91C15DC0200AFB093 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		8481B09A1C2706AC00FE6B8E /* mySceionview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mySceionview.swift; sourceTree = "<group>"; };
 		8481B09C1C2706C100FE6B8E /* mySceionview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mySceionview.xib; sourceTree = "<group>"; };
 		8481B09F1C27163C00FE6B8E /* PayDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayDetailsViewController.swift; sourceTree = "<group>"; };
+		848BBEA61C297D12004B0FCF /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		84BF5A971C26B2AD006845D0 /* ProgramaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramaCell.swift; sourceTree = "<group>"; };
 		84BF5A981C26B2AD006845D0 /* ProgramaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramaCell.xib; sourceTree = "<group>"; };
 		84BF5A9B1C26BA9C006845D0 /* ProgramaBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramaBaseClass.h; sourceTree = "<group>"; };
@@ -188,7 +190,7 @@
 		841664C21C15DC0200AFB093 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				841664C11C15DC0200AFB093 /* DouYuSwift.app */,
+				841664C11C15DC0200AFB093 /* 斗鱼TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,10 +368,19 @@
 		8481B09E1C2715D800FE6B8E /* PlayDetails */ = {
 			isa = PBXGroup;
 			children = (
+				848BBEA51C297D12004B0FCF /* view */,
 				8481B09F1C27163C00FE6B8E /* PayDetailsViewController.swift */,
 			);
 			name = PlayDetails;
 			path = DouYuSwift/PlayDetails;
+			sourceTree = "<group>";
+		};
+		848BBEA51C297D12004B0FCF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				848BBEA61C297D12004B0FCF /* Player.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		84BF5A951C26B283006845D0 /* model */ = {
@@ -434,7 +445,7 @@
 			);
 			name = DouYuSwift;
 			productName = DouYuSwift;
-			productReference = 841664C11C15DC0200AFB093 /* DouYuSwift.app */;
+			productReference = 841664C11C15DC0200AFB093 /* 斗鱼TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -547,6 +558,7 @@
 				841665121C1732CF00AFB093 /* Tools.swift in Sources */,
 				841664EA1C15ED8E00AFB093 /* ProgramaViewController.swift in Sources */,
 				8416657E1C186A3300AFB093 /* SDCollectionViewCell.m in Sources */,
+				848BBEA71C297D12004B0FCF /* Player.swift in Sources */,
 				8481B0A01C27163C00FE6B8E /* PayDetailsViewController.swift in Sources */,
 				841664C71C15DC0200AFB093 /* ViewController.swift in Sources */,
 				841664E01C15E2BF00AFB093 /* BaseViewController.swift in Sources */,
@@ -700,7 +712,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxin.DouYuSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "斗鱼TV";
 				SWIFT_OBJC_BRIDGING_HEADER = "DouYuSwift/DouYuSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
@@ -717,7 +729,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxin.DouYuSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "斗鱼TV";
 				SWIFT_OBJC_BRIDGING_HEADER = "DouYuSwift/DouYuSwift-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};

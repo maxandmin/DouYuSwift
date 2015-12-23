@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="channel" id="jGd-bl-JKa" customClass="channelView" customModule="DouYuSwift">
+        <view contentMode="scaleToFill" restorationIdentifier="channel" id="jGd-bl-JKa" customClass="channelView" customModule="斗鱼TV" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="107" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

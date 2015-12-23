@@ -29,20 +29,25 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         LoadmainData()
         loadGamelist()
         MainCollectionView()
+     
+       
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     //       MARK: maincoll
     
      func MainCollectionView(){
       let maincoll:UICollectionView = self.mycollview
       self.view.addSubview(maincoll)
+       
       topview()
 //      print(maincoll.mj_header)
-//     maincoll.mj_header.setRefreshingTarget(self, refreshingAction: "mainrefresh")
+        
+//      maincoll.mj_header.setRefreshingTarget(self, refreshingAction: "mainrefresh")
+       
     }
     
     lazy var mycollview:UICollectionView={
@@ -188,11 +193,14 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        print(indexPath.row)
+//      
+//        let collArray:RecGamelistData = gameArray[indexPath.section] as! RecGamelistData
+//        let Rdate:RecGamelistRoomlist = collArray.roomlist[indexPath.row] as! RecGamelistRoomlist
 //        
-//        let PayDetails = PayDetailsViewController()
-//        self.presentViewController(PayDetails, animated: true, completion: nil)
-//        
+//        print(Rdate)
+        let PayDetails = PayDetailsViewController()
+        self.presentViewController(PayDetails, animated: true, completion: nil)
+//
     }
     
     
@@ -200,8 +208,11 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
         
         print(index)
+        
+           let info:RecTopData = TopBase.data[index] as! RecTopData
+        
+         print(info)
     }
-    
     
     
 
