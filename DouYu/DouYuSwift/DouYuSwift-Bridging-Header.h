@@ -13,6 +13,8 @@
 #import "UIButton+WebCache.h"
 #import "SVProgressHUD.h"
 #import "SDCycleScrollView.h"
+#import "FMGVideoPlayView.h"
+#import "FullViewController.h"
 
 /**
  *  数据模型

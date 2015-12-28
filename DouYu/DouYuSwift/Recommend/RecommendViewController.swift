@@ -38,15 +38,17 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     }
 
     //       MARK: maincoll
-    
-     func MainCollectionView(){
+    func MainCollectionView(){
       let maincoll:UICollectionView = self.mycollview
       self.view.addSubview(maincoll)
-       
-      topview()
-//      print(maincoll.mj_header)
+       topview()
+//
         
 //      maincoll.mj_header.setRefreshingTarget(self, refreshingAction: "mainrefresh")
+//      maincoll.mj_header = MJRefreshHeader.setRefreshingTarget(self,refreshingAction:"mainrefresh")
+//      maincoll.mj_header = MJRefreshHeader.setRefreshingTarget(self)
+//      maincoll.mj_header = MJRefreshHeader.init(refreshingTarget: self, refreshingAction:"mainrefresh")
+//      maincoll.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction:"mainrefresh")
        
     }
     
@@ -90,7 +92,7 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     
 //     MARK: - 轮播图
     func topHeaderview(){
-        
+       
         topView!.addSubview(self.myTopHeaderView)
     }
     
@@ -193,11 +195,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-//      
-//        let collArray:RecGamelistData = gameArray[indexPath.section] as! RecGamelistData
-//        let Rdate:RecGamelistRoomlist = collArray.roomlist[indexPath.row] as! RecGamelistRoomlist
-//        
-//        print(Rdate)
         let PayDetails = PayDetailsViewController()
         self.presentViewController(PayDetails, animated: true, completion: nil)
 //
