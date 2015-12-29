@@ -18,7 +18,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     var titleArray:NSMutableArray!
     var footArray:NSArray!
     var gameArray:NSArray!
-    var topView:UIView?
     
     
     override func viewDidLoad() {
@@ -29,7 +28,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         LoadmainData()
         loadGamelist()
         MainCollectionView()
-     
        
     }
     
@@ -41,9 +39,9 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     func MainCollectionView(){
       let maincoll:UICollectionView = self.mycollview
       self.view.addSubview(maincoll)
-       topview()
-//      maincoll.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction:"mainrefresh")
-       
+        topHeaderview()
+        footScrollview()
+
     }
     
     lazy var mycollview:UICollectionView={
@@ -72,27 +70,15 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     }()
     
     
-    
-//    MARK: - CollectionView头的背景view
-    func topview(){
-        topView = UIView()
-        topView!.frame = CGRectMake(0, -270, ScreenWidth, 270)
-        topView!.backgroundColor  = RGBA(245, g: 245, b: 246, a: 1)
-        self.mycollview.addSubview(topView!)
-        topHeaderview()
-        footScrollview()
-        
-    }
-    
 //     MARK: - 轮播图
     func topHeaderview(){
        
-        topView!.addSubview(self.myTopHeaderView)
+        self.mycollview.addSubview(self.myTopHeaderView)
     }
     
     lazy var myTopHeaderView:SDCycleScrollView={
     
-        let TopHeaderView:SDCycleScrollView = SDCycleScrollView(frame: CGRectMake(0, 0, ScreenWidth, 200*KWidth_Scale))
+        let TopHeaderView:SDCycleScrollView = SDCycleScrollView(frame: CGRectMake( 0, -270, ScreenWidth, 200*KWidth_Scale))
         TopHeaderView.delegate = self
         TopHeaderView.placeholderImage = defaultImg
         TopHeaderView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic
@@ -106,18 +92,17 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     func footScrollview(){
         self.myfootScroll.contentSize.height = 80
         self.myfootScroll.backgroundColor=UIColor.whiteColor()
-        topView!.addSubview(self.myfootScroll)
+        self.mycollview.addSubview(self.myfootScroll)
         
     }
     
     lazy var myfootScroll:channelScrollview={
     
         let  footScroll = channelScrollview()
-        footScroll.frame = CGRectMake(0,200*KWidth_Scale+10,ScreenWidth,80)
+        footScroll.frame = CGRectMake(0,-85,ScreenWidth,80)
         footScroll.backgroundColor = RGBA(245, g: 245, b: 246, a: 1)
         footScroll.showsHorizontalScrollIndicator = false
         footScroll.showsVerticalScrollIndicator   = false
-        footScroll.backgroundColor = RGBA(245, g: 245, b: 246, a: 1)
         footScroll.initBlock({(selectIndex) -> Void in
             
             print(selectIndex)
@@ -247,7 +232,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         let Fwidth:NSInteger = NSInteger (ScreenWidth/3)
         self.myfootScroll.contentSize.width = CGFloat((footArray.count+1) * 5)+CGFloat(footArray.count * Fwidth)
         self.myfootScroll.setchannelScroll(footArray)
-        topView!.backgroundColor = UIColor.whiteColor()
     }
         
     }
@@ -274,13 +258,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     }
 
 
-    func mainrefresh(){
-    
-//        LoadTopData()
-//        LoadmainData()
-//        loadGamelist()
-        
-    }
     
     
 }
