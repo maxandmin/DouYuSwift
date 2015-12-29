@@ -85,6 +85,9 @@ class ProgramaViewController: BaseViewController,UICollectionViewDelegate,UIColl
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         print(indexPath.row)
+        let PayDetails = PayDetailsViewController()
+        self.presentViewController(PayDetails, animated: true, completion: nil)
+
     }
     
 // MARK - 获取栏目数据

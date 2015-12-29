@@ -191,16 +191,14 @@
     
         [self.fullVc dismissViewControllerAnimated:NO completion:^{
            
-            [self.contrainerViewController.view addSubview:self];
-            [UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-               
-                self.frame = CGRectMake(0, 0, ScreenWidth, ScreenWidth * 9 / 16);
-            } completion:nil];
-            
-            self.center = self.fullVc.view.center;
-            
             [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];//这句话是防止手动先把设备置为竖屏,导致下面的语句失效.
             [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
+            
+            [self.contrainerViewController.view addSubview:self];
+            [UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+            self.frame = CGRectMake(0, 0, ScreenHeight, ScreenHeight * 9 / 16);
+            } completion:nil];
+            
         }];
     }
 }

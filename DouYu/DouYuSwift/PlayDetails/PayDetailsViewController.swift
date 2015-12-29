@@ -8,7 +8,9 @@
 /// 用于处理游戏播放的类
 
 let videoUrl1 = NSURL(string: "http://112.65.220.28/flv2.bn.netease.com/videolib3/1512/25/PZMbw3680/SD/PZMbw3680-mobile.mp4")!
+
 let videoUrl = "http://112.65.220.28/flv2.bn.netease.com/videolib3/1512/25/PZMbw3680/SD/PZMbw3680-mobile.mp4"
+
 import UIKit
 import AVFoundation
 class PayDetailsViewController: BaseViewController ,PlayerDelegate,FMGVideoPlayViewDelegate{
@@ -102,7 +104,6 @@ class PayDetailsViewController: BaseViewController ,PlayerDelegate,FMGVideoPlayV
         }
     }
 
-
     // MARK: PlayerDelegate
     
     func playerReady(player: Player) {
@@ -126,7 +127,7 @@ class PayDetailsViewController: BaseViewController ,PlayerDelegate,FMGVideoPlayV
     }
     
     func shareAction() {
-        
+        print("------")
     }
 
 

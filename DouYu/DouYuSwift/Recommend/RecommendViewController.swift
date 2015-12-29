@@ -42,12 +42,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
       let maincoll:UICollectionView = self.mycollview
       self.view.addSubview(maincoll)
        topview()
-//
-        
-//      maincoll.mj_header.setRefreshingTarget(self, refreshingAction: "mainrefresh")
-//      maincoll.mj_header = MJRefreshHeader.setRefreshingTarget(self,refreshingAction:"mainrefresh")
-//      maincoll.mj_header = MJRefreshHeader.setRefreshingTarget(self)
-//      maincoll.mj_header = MJRefreshHeader.init(refreshingTarget: self, refreshingAction:"mainrefresh")
 //      maincoll.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction:"mainrefresh")
        
     }
@@ -83,7 +77,7 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     func topview(){
         topView = UIView()
         topView!.frame = CGRectMake(0, -270, ScreenWidth, 270)
-        topView!.backgroundColor = UIColor.whiteColor()
+        topView!.backgroundColor  = RGBA(245, g: 245, b: 246, a: 1)
         self.mycollview.addSubview(topView!)
         topHeaderview()
         footScrollview()
@@ -192,7 +186,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         
     }
     
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let PayDetails = PayDetailsViewController()
@@ -214,7 +207,6 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     
 
      //MARK: -  请求首页轮播图数据
- 
     func LoadTopData(){
         
         let parameters:NSDictionary = ["aid":"ios","auth":"97d9e4d3e9dfab80321d11df5777a107","client_sys":"ios","time":GetNowTimes()]
@@ -239,8 +231,9 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     func Topfailed(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)->Void{
         print("失败了")
     }
-      //MARK: - 推荐栏目
-
+    
+    
+    //MARK: - 推荐栏目
     func LoadmainData(){
         let baseurl:String = NEW_URl+GetNowTimes()
         MKAPI.GET(baseurl, parameters:"", succeed: mainsuccess, failed: mainfailed)
@@ -254,6 +247,7 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         let Fwidth:NSInteger = NSInteger (ScreenWidth/3)
         self.myfootScroll.contentSize.width = CGFloat((footArray.count+1) * 5)+CGFloat(footArray.count * Fwidth)
         self.myfootScroll.setchannelScroll(footArray)
+        topView!.backgroundColor = UIColor.whiteColor()
     }
         
     }
@@ -282,9 +276,9 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
 
     func mainrefresh(){
     
-        LoadTopData()
-        LoadmainData()
-        loadGamelist()
+//        LoadTopData()
+//        LoadmainData()
+//        loadGamelist()
         
     }
     

@@ -28,8 +28,7 @@ class LiveViewController: BaseViewController,UICollectionViewDelegate,UICollecti
     func MainCollectionView(){
         let maincoll:UICollectionView = self.mycollview
         self.view.addSubview(maincoll)
-        //      print(maincoll.mj_header)
-        //     maincoll.mj_header.setRefreshingTarget(self, refreshingAction: "mainrefresh")
+       
     }
     
     lazy var mycollview:UICollectionView={
@@ -70,7 +69,6 @@ class LiveViewController: BaseViewController,UICollectionViewDelegate,UICollecti
         return 1
     }
     
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell:RecommendCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier("ReCell", forIndexPath: indexPath) as! RecommendCollectionCell
@@ -84,9 +82,11 @@ class LiveViewController: BaseViewController,UICollectionViewDelegate,UICollecti
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         print(indexPath.row)
+        let PayDetails = PayDetailsViewController()
+        self.presentViewController(PayDetails, animated: true, completion: nil)
+
     }
     
-
     
     func livedata(){
         let baseurl:String = LIVE_URl+GetNowTimes()
