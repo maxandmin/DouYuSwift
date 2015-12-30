@@ -18,6 +18,7 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     var titleArray:NSMutableArray!
     var footArray:NSArray!
     var gameArray:NSArray!
+    var topView:UIView?
     
     
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         LoadmainData()
         loadGamelist()
         MainCollectionView()
+     
        
     }
     
@@ -39,10 +41,12 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     func MainCollectionView(){
       let maincoll:UICollectionView = self.mycollview
       self.view.addSubview(maincoll)
-        topHeaderview()
-        footScrollview()
-
+       topview()
+//      maincoll.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction:"mainrefresh")
+       
     }
+    
+
     
     lazy var mycollview:UICollectionView={
     
@@ -54,7 +58,7 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         flowLayout.minimumLineSpacing = 5;//每个相邻layout的上下
         flowLayout.minimumInteritemSpacing = 0;//每个相邻layout的左右
         flowLayout.headerReferenceSize = CGSizeMake(0, 0);
-       var CollectionView = UICollectionView(frame: CGRectMake(0, 64, self.view.bounds.width, self.view.bounds.height-64-49), collectionViewLayout: flowLayout)
+        var CollectionView = UICollectionView(frame: CGRectMake(0, 64, self.view.bounds.width, self.view.bounds.height-64-49), collectionViewLayout: flowLayout)
         CollectionView.delegate = self
         CollectionView.dataSource = self
         CollectionView.backgroundColor = RGBA(245, g: 245, b: 246, a: 1)
@@ -70,15 +74,25 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     }()
     
     
+//    MARK: - CollectionView头的背景view
+    func topview(){
+        topView = UIView()
+        topView!.frame = CGRectMake(0, -270, ScreenWidth, 270)
+        self.mycollview.addSubview(topView!)
+        topHeaderview()
+        footScrollview()
+        
+    }
+    
 //     MARK: - 轮播图
     func topHeaderview(){
        
-        self.mycollview.addSubview(self.myTopHeaderView)
+        topView!.addSubview(self.myTopHeaderView)
     }
     
     lazy var myTopHeaderView:SDCycleScrollView={
     
-        let TopHeaderView:SDCycleScrollView = SDCycleScrollView(frame: CGRectMake( 0, -270, ScreenWidth, 200*KWidth_Scale))
+        let TopHeaderView:SDCycleScrollView = SDCycleScrollView(frame: CGRectMake(0, 0, ScreenWidth, 200*KWidth_Scale))
         TopHeaderView.delegate = self
         TopHeaderView.placeholderImage = defaultImg
         TopHeaderView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic
@@ -92,17 +106,18 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
     func footScrollview(){
         self.myfootScroll.contentSize.height = 80
         self.myfootScroll.backgroundColor=UIColor.whiteColor()
-        self.mycollview.addSubview(self.myfootScroll)
+        topView!.addSubview(self.myfootScroll)
         
     }
     
     lazy var myfootScroll:channelScrollview={
     
         let  footScroll = channelScrollview()
-        footScroll.frame = CGRectMake(0,-85,ScreenWidth,80)
+        footScroll.frame = CGRectMake(0,200*KWidth_Scale+10,ScreenWidth,80)
         footScroll.backgroundColor = RGBA(245, g: 245, b: 246, a: 1)
         footScroll.showsHorizontalScrollIndicator = false
         footScroll.showsVerticalScrollIndicator   = false
+        footScroll.backgroundColor = RGBA(245, g: 245, b: 246, a: 1)
         footScroll.initBlock({(selectIndex) -> Void in
             
             print(selectIndex)
@@ -232,6 +247,7 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         let Fwidth:NSInteger = NSInteger (ScreenWidth/3)
         self.myfootScroll.contentSize.width = CGFloat((footArray.count+1) * 5)+CGFloat(footArray.count * Fwidth)
         self.myfootScroll.setchannelScroll(footArray)
+        topView!.backgroundColor = UIColor.whiteColor()
     }
         
     }
@@ -251,13 +267,20 @@ class RecommendViewController: BaseViewController,UICollectionViewDelegate,UICol
         RecGame  = RecGamelistBaseClass(dictionary:  responseObject as! [NSObject : AnyObject])
         gameArray = RecGame.data
         self.mycollview.reloadData()
-        
+        self.mycollview.mj_header.endRefreshing()
     }
     func gamefailed(operation: AFHTTPRequestOperation!, responseObject: AnyObject!)->Void{
         print("失败了")
     }
 
 
+//    func mainrefresh(){
+//    
+//        LoadTopData()
+//        LoadmainData()
+//        loadGamelist()
+//        
+//    }
     
     
 }

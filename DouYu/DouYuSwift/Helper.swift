@@ -40,7 +40,7 @@ let CHANEL_URl  = "http://www.douyutv.com/api/v1/channel?aid=ios&auth=6a4c6b01d8
 let PROGRAMA_URl = "http://www.douyutv.com/api/v1/game?aid=ios&auth=3f252c3294b31a61fbdd890a45609549&client_sys=ios&time="
 
  /// 直播
-let LIVE_URl = "http://www.douyutv.com/api/v1/live?aid=ios&auth=b317487532542c2f8200f374f3153da2&client_sys=ios&limit=20o&ffset=0&time="
+let LIVE_URl = "http://www.douyutv.com/api/v1/live?aid=ios&auth=b317487532542c2f8200f374f3153da2&client_sys=ios&"
 
 
 

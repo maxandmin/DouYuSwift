@@ -29,6 +29,8 @@ class ProgramaViewController: BaseViewController,UICollectionViewDelegate,UIColl
     func MainCollectionView(){
         let maincoll:UICollectionView = self.mycollview
         self.view.addSubview(maincoll)
+     
+        
     }
     
     lazy var mycollview:UICollectionView={
@@ -51,8 +53,7 @@ class ProgramaViewController: BaseViewController,UICollectionViewDelegate,UIColl
         
     }()
     
-    
-    
+
     
     
     //    MARK: - collectionView 方法
